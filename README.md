@@ -26,15 +26,18 @@ good coding practices! The list, however, isn't complete so you can be a little 
 NOTE: You will need to get your free OMDB api key (generate at https://www.omdbapi.com/apikey.aspx). You can include it
 in the project in an `.env` file if you want but it is not a necessity.
 
-##Running code locally in development mode
+**Running code locally in development mode**
 
-```git clone https://github.com/muhibzeon/omdb-browser-challenge.git
+```
+git clone https://github.com/muhibzeon/omdb-browser-challenge.git
 npm install
 npm run dev
 ```
 
-###Open another terminal and run
-
-```npm run server
+**Open another terminal and run:**
 
 ```
+npm run server
+```
+
+<sub>json-server is used to kepp track of the movie title and the page number. It is used to get a very simple back-end support. Without it when you change route and go back to the previous route, the next page naturally re-renders and the states are reset.</sub>

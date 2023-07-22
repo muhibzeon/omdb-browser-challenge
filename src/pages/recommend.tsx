@@ -4,7 +4,7 @@ import styles from "@/styles/Recommend.module.css";
 import { useState, useEffect } from "react";
 import SectionCards from "@/components/card/section-card";
 import Loader from "@/components/Loader/Loader";
-import { MdOutlineArrowBack } from "react-icons/Md";
+import { MdOutlineArrowBack } from "react-icons/md";
 import Link from "next/link";
 import { getMovies } from "../../lib/movies";
 

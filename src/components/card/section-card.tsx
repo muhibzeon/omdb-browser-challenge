@@ -2,17 +2,30 @@ import Card from "./Card";
 import styles from "./section-card.module.css";
 import clsx from "classnames";
 import Link from "next/link";
+interface Movies {
+  Title: string;
+  Year: number;
+  imdbID: string;
+  Type: string;
+  Poster: string;
+}
 
-const SectionCards = (props: any) => {
-  const { title, movies = [], size, shouldWrap = true, shouldScale } = props;
+type sectionCardProps = {
+  movies: Movies[];
+  size: string;
+  shouldWrap: boolean;
+  shouldScale: boolean;
+};
+
+const SectionCards: React.FC<sectionCardProps> = (props) => {
+  const { movies = [], size, shouldWrap = true, shouldScale } = props;
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>{title}</h2>
       <div className={clsx(styles.cardWrapper, shouldWrap && styles.wrap)}>
         {movies.length > 0 &&
-          movies.map((movie: any) => {
+          movies.map((movie: Movies, idx: number) => {
             return (
-              <Link href={`/movie/${movie.imdbID}`}>
+              <Link href={`/movie/${movie.imdbID}`} key={idx}>
                 <Card
                   key={movie.imdbID}
                   id={movie.imdbID}

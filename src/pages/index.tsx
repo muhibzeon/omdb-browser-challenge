@@ -131,7 +131,12 @@ export default function Search() {
         ) : movieDetails?.length > 0 ? (
           <div className={styles.sectionWrapper}>
             <div className={styles.container}>
-              <SectionCards movies={movieDetails} size="medium" />
+              <SectionCards
+                movies={movieDetails}
+                size="medium"
+                shouldWrap={true}
+                shouldScale={true}
+              />
             </div>
           </div>
         ) : (

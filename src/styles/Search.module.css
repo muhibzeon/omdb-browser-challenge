@@ -1,0 +1,108 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #99b998, #734b6d);
+}
+.sectionWrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container {
+  padding: 0rem;
+}
+
+.search {
+  height: 100px;
+  display: grid;
+  place-content: center;
+}
+
+.searchBox {
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.label {
+  display: block;
+  font: 2rem "Fira Sans", sans-serif;
+  margin-right: 0.5rem;
+  font-family: "Roboto Slab", serif;
+  color: #85e8a1;
+}
+
+.input {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  background-color: white;
+  padding: 0 10px;
+  min-width: 350px;
+}
+
+.button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  height: 40px;
+  color: white;
+  background-color: rgb(37, 159, 96);
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.errorText {
+  margin-top: 3rem;
+  margin-bottom: 15rem;
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(5px, 5vw, 25px);
+  color: #9e1212;
+}
+
+.pagination {
+  margin: 15px auto;
+  margin-top: 50px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  outline: none;
+}
+.pagination > .active > a {
+  background-color: #fff;
+  border-color: #0c7a6f;
+  color: #0c7a6f;
+}
+.pagination > li > a {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #fff;
+  border-color: #fff;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #fff;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}

@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 4rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #99b998, #734b6d);
+}
+
+.sectionWrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.fluidButton {
+  display: flex;
+  font-family: "Jura", sans-serif;
+  font-size: clamp(5px, 5vw, 25px);
+  color: #326660;
+  text-decoration: none;
+  border: 0.05em solid #326660;
+  padding: 0.1em 1em 0.1em 1em;
+  letter-spacing: 0.05em;
+  line-height: 1.7em;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  top: 5rem;
+  left: 2rem;
+  size: 70px;
+  color: #e9376c;
+  font-size: x-large;
+}

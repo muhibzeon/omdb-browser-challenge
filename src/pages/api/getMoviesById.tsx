@@ -13,7 +13,6 @@ export default async function getMoviesById(
 ) {
   try {
     const id = req.query;
-    console.log("from movie api", typeof id.i);
     const response = await getMoviesByID(id.i);
     res.status(200);
     res.json(response);

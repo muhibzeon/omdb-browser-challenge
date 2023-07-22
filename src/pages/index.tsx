@@ -18,32 +18,26 @@ interface Movies {
 }
 
 export default function Search() {
-  const [movieName, setMovieName] = useState<string>("war");
+  const [movieName, setMovieName] = useState<string>("");
   const [movieDetails, setMovieDetails] = useState<Movies[]>([]);
   const [page, setPage] = useState<number>(1);
   const [total, setTotal] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setMovieName(event.target.value);
+    setMovieName(event.currentTarget.value);
   };
 
   const handleClick = () => {
+    setPage(1);
     getMoviesToDisplay(page);
   };
 
   const handlePageClick = (event: any) => {
-    console.log("pagination is clicked", event.selected + 1);
+    console.log("pagination is clicked", event.selected);
     setPage(event.selected + 1);
     getMoviesToDisplay(event.selected + 1);
-  };
-
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-    },
   };
 
   const saveData = async (name: string, page: number) => {
@@ -55,6 +49,13 @@ export default function Search() {
       body: JSON.stringify({ name, page }),
     });
     return response.json();
+  };
+
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+    },
   };
 
   const getMoviesToDisplay = async (page: number) => {
@@ -84,13 +85,12 @@ export default function Search() {
         },
       });
       const dbData = await response.json();
-      const data = await getMovies(
-        dbData[0].name === null ? "war" : dbData[0].name,
-        dbData[0].page === null ? 1 : dbData[0].page
-      );
+      const data = await getMovies(dbData[0].name, dbData[0].page);
       setMovieDetails(data.Search);
+      setMovieName(dbData[0].name);
       setTotal(Math.ceil(data.totalResults / 10));
       setIsLoading(false);
+      setPage(dbData[0].page);
     };
     initialMovies();
   }, []);
@@ -112,6 +112,7 @@ export default function Search() {
               type="text"
               id="site-search"
               name="input"
+              value={movieName}
               placeholder="Search for any movie..."
               className={styles.input}
               onChange={handleChange}
@@ -148,6 +149,7 @@ export default function Search() {
             pageCount={total}
             marginPagesDisplayed={1}
             pageRangeDisplayed={7}
+            forcePage={page - 1}
             onPageChange={handlePageClick}
             containerClassName={styles.pagination}
             activeClassName={styles.active}

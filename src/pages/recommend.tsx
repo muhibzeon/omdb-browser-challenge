@@ -6,7 +6,6 @@ import SectionCards from "@/components/card/section-card";
 import Loader from "@/components/Loader/Loader";
 import { MdOutlineArrowBack } from "react-icons/Md";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { getMovies } from "../../lib/movies";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +24,6 @@ export default function Recommend() {
   let movieName = "war";
   let page = 3;
 
-  const router = useRouter();
   const options = {
     method: "GET",
     headers: {
@@ -124,11 +122,6 @@ export default function Recommend() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        {/* update with recommendations page code */}
-        {/*<label className={styles.label}>
-                  Movie Recommendations for you:
-                </label>*/}
-
         <button className={styles.fluidButton} onClick={handleRecommend}>
           Click to Get Some movie recommendations
         </button>

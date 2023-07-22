@@ -67,7 +67,7 @@
 
 .pagination {
   margin: 15px auto;
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@
 .pagination > .active > a {
   background-color: #fff;
   border-color: #0c7a6f;
-  color: #0c7a6f;
+  color: #053d37;
 }
 .pagination > li > a {
   border: 1px solid #fff;

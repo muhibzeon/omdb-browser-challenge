@@ -1,8 +1,9 @@
-OMDB Browser
-----
+## OMDB Browser
+
 https://www.omdbapi.com/
 
-----
+---
+
 Design a webapp for browsing OMDB. A bare-bones nextjs project is provided. You have the following implementation tasks:
 
 - **Design a search page for movies.** It should show a limited number of movies matching the search keyword. Use the
@@ -24,3 +25,16 @@ good coding practices! The list, however, isn't complete so you can be a little 
 
 NOTE: You will need to get your free OMDB api key (generate at https://www.omdbapi.com/apikey.aspx). You can include it
 in the project in an `.env` file if you want but it is not a necessity.
+
+##Running code locally in development mode
+
+```git clone https://github.com/muhibzeon/omdb-browser-challenge.git
+npm install
+npm run dev
+```
+
+###Open another terminal and run
+
+```npm run server
+
+```

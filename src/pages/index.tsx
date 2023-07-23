@@ -24,22 +24,25 @@ export default function Search() {
   const [total, setTotal] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  //handling input
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
     setMovieName(event.currentTarget.value);
   };
 
+  //handling 'search' button
   const handleClick = () => {
     setPage(1);
-    getMoviesToDisplay(page);
+    getMoviesToDisplay(1);
   };
 
+  //handling pagination
   const handlePageClick = (event: any) => {
-    console.log("pagination is clicked", event.selected);
     setPage(event.selected + 1);
     getMoviesToDisplay(event.selected + 1);
   };
 
+  //updating data in the db.json
   const saveData = async (name: string, page: number) => {
     const response = await fetch("http://localhost:3001/searchData/1", {
       method: "PUT",
@@ -58,6 +61,7 @@ export default function Search() {
     },
   };
 
+  //fetch movies
   const getMoviesToDisplay = async (page: number) => {
     try {
       setIsLoading(true);

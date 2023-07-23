@@ -1,8 +1,8 @@
 {
   "recommenders": [
     {
-      "name": "musical",
-      "page": 6,
+      "name": "all",
+      "page": 4,
       "id": 1
     }
   ],

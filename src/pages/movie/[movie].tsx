@@ -28,6 +28,7 @@ const Movie = () => {
   const router = useRouter();
   const movieId = router.query.movie;
 
+  //get movies by id
   const getMovie = async () => {
     const response = await fetch(`/api/getMoviesById?i=${movieId}`);
     const data = await response.json();
@@ -42,7 +43,7 @@ const Movie = () => {
   return (
     <div>
       {isLoading ? (
-        <Loader />
+        <p className={styles.text}>Loading...</p>
       ) : (
         movie !== undefined && (
           <div className={styles.showRoute}>

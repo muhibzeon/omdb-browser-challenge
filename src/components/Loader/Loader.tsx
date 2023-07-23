@@ -3,8 +3,11 @@ import { ImSpinner10 } from "react-icons/im";
 
 const Loader = () => {
   return (
-    <div className={styles.loadingIcon}>
-      <ImSpinner10 />
+    <div>
+      <p className={styles.text}>Loading...</p>
+      <div className={styles.loadingIcon}>
+        <ImSpinner10 />
+      </div>
     </div>
   );
 };

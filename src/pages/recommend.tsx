@@ -31,6 +31,7 @@ export default function Recommend() {
     },
   };
 
+  //declaring some titles to randomly pick
   const randomTitles = [
     "war",
     "thriller",
@@ -59,6 +60,7 @@ export default function Recommend() {
     "will",
   ];
 
+  //fetch movies
   const getRecommendedMovies = async (name: string, page: number) => {
     try {
       const response = await fetch(
@@ -73,6 +75,7 @@ export default function Recommend() {
     }
   };
 
+  //update data in the db.json
   const saveData = async (name: string, page: number) => {
     const response = await fetch("http://localhost:3001/recommenders/1", {
       method: "PUT",
@@ -81,10 +84,10 @@ export default function Recommend() {
       },
       body: JSON.stringify({ name, page }),
     });
-
     return response.json();
   };
 
+  //handling recommendation button click
   const handleRecommend = () => {
     const movieTitle =
       randomTitles[Math.floor(Math.random() * randomTitles.length)];

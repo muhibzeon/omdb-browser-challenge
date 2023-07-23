@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "pages/index.tsx",
+      "src": "/pages",
       "use": "@vercel/node",
       "config": {
         "includeFiles": ["db.json"]
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "pages/index.tsx"
+      "dest": "/pages"
     }
   ]
 }
